@@ -7,16 +7,57 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/mainBackground"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-thin"
-        android:text="Booking System"
-        android:textSize="20sp"
-        android:letterSpacing="0.5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
+        android:scaleType="centerCrop"
+
+        android:contentDescription="Background image"
+
+        app:srcCompat="@drawable/main_background_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:scaleType="fitXY"
+
+        android:contentDescription="Background scaler"
+
+        app:srcCompat="@drawable/main_background_scaler_bar"
+        app:layout_constraintTop_toTopOf="@id/mainBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center|start"
+
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.5"
+
+            android:text="Booking\nSystem"
+            android:textSize="40sp" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
