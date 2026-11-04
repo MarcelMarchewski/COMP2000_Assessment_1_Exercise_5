@@ -40,6 +40,10 @@ public class ActivityEmployeeLogin extends AppCompatActivity {
 
         showPasswordButton.setOnClickListener(x -> OnShowPasswordClick(showPasswordButton, passwordInput));
 
+        Button forgotPasswordButton = (Button) findViewById(R.id.forgotPasswordButton);
+
+        forgotPasswordButton.setOnClickListener(x -> OnForgotPasswordClick());
+
         if (savedInstanceState != null)
         {
             isPasswordVisible = savedInstanceState.getBoolean("passwordVisible", false);
@@ -48,17 +52,17 @@ public class ActivityEmployeeLogin extends AppCompatActivity {
         }
     }
 
+    private void OnBackButtonClick()
+    {
+        finish();
+    }
+
     @Override
     protected void onSaveInstanceState(Bundle outState)
     {
         super.onSaveInstanceState(outState);
 
         outState.putBoolean("passwordVisible", isPasswordVisible);
-    }
-
-    private void OnBackButtonClick()
-    {
-        finish();
     }
 
     private void OnShowPasswordClick(Button showPasswordButton, EditText passwordInput)
@@ -89,5 +93,12 @@ public class ActivityEmployeeLogin extends AppCompatActivity {
 
         passwordInput.setTypeface(original);
         passwordInput.setSelection(cursorPos);
+    }
+
+    private void OnForgotPasswordClick()
+    {
+        Intent intent = new Intent(this, ForgotPassword.class);
+
+        startActivity(intent);
     }
 }
