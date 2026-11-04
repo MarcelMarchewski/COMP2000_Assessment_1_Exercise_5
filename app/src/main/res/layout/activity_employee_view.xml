@@ -67,7 +67,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
-    <ScrollView
+    <!---
+    This recycler view looks different when application runs.
+    Check full documentation for screenshots, or test the app.
+    -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bookingsRecyclerView"
+
         android:layout_width="match_parent"
         android:layout_height="0dp"
 
@@ -77,90 +84,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:gravity="center"
-
-            android:orientation="vertical"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_marginTop="6dp"
-
-                android:fontFamily="sans-serif-light"
-                android:letterSpacing="0.5"
-
-                android:text="Today"
-                android:textSize="16sp"
-                android:textColor="?android:textColorPrimary"
-                />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:layout_marginTop="8dp"
-
-                app:cardCornerRadius="3dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/bookingOrange"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:orientation="horizontal"
-
-                    android:gravity="center_vertical"
-                    >
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginStart="10dp"
-
-                        android:orientation="vertical"
-                        >
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            android:fontFamily="sans-serif-light"
-                            android:letterSpacing="0.5"
-
-                            android:text="Seminar Room 2"
-                            android:textSize="16sp"
-                            android:textColor="@color/white"
-                            />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            android:fontFamily="sans-serif-light"
-                            android:letterSpacing="0.5"
-
-                            android:layout_marginTop="24dp"
-
-                            android:text="06/11/2026\n\n09:00-12:00"
-                            android:textSize="12sp"
-                            android:textColor="@color/white"
-                        />
-                    </LinearLayout>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </ScrollView>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:id="@+id/pageNavBar"
@@ -185,7 +109,7 @@
 
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginEnd="36dp"
+            android:layout_marginEnd="48dp"
 
             android:background="@drawable/view_bookings_img"
 
@@ -214,7 +138,7 @@
 
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginStart="36dp"
+            android:layout_marginStart="48dp"
 
             android:background="@drawable/settings_img"
 

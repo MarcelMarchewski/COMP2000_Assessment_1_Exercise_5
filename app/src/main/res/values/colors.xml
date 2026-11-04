@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bookingBlue">#3A5FB5</color>
     <color name="bookingOrange">#B5753A</color>
+    <color name="bookingOrangePale">#C28B59</color>
 </resources>
