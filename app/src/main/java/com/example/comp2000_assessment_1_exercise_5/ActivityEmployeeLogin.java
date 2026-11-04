@@ -1,6 +1,9 @@
 package com.example.comp2000_assessment_1_exercise_5;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +23,14 @@ public class ActivityEmployeeLogin extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button backButton = (Button) findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(x -> OnBackButtonClick());
+    }
+
+    private void OnBackButtonClick()
+    {
+        finish();
     }
 }
