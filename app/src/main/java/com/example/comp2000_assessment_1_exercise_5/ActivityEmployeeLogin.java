@@ -34,6 +34,10 @@ public class ActivityEmployeeLogin extends AppCompatActivity {
 
         backButton.setOnClickListener(x -> OnBackButtonClick());
 
+        Button submitButton = (Button) findViewById(R.id.submitButton);
+
+        submitButton.setOnClickListener(x -> OnSubmitButtonClick());
+
         Button showPasswordButton = (Button) findViewById(R.id.showPasswordButton);
 
         EditText passwordInput = (EditText) findViewById(R.id.passwordInput);
@@ -52,17 +56,26 @@ public class ActivityEmployeeLogin extends AppCompatActivity {
         }
     }
 
-    private void OnBackButtonClick()
-    {
-        finish();
-    }
-
     @Override
     protected void onSaveInstanceState(Bundle outState)
     {
         super.onSaveInstanceState(outState);
 
         outState.putBoolean("passwordVisible", isPasswordVisible);
+    }
+
+    private void OnBackButtonClick()
+    {
+        finish();
+    }
+
+    private void OnSubmitButtonClick()
+    {
+        Intent intent = new Intent(this, EmployeeView.class);
+
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+        startActivity(intent);
     }
 
     private void OnShowPasswordClick(Button showPasswordButton, EditText passwordInput)

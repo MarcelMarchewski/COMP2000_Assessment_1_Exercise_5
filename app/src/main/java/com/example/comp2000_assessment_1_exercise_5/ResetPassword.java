@@ -1,6 +1,11 @@
 package com.example.comp2000_assessment_1_exercise_5;
 
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.InputType;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +14,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class ResetPassword extends AppCompatActivity {
+
+    private boolean isPasswordVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +27,78 @@ public class ResetPassword extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button backButton = (Button) findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(x -> OnBackButtonClick());
+
+        Button submitButton = (Button) findViewById(R.id.submitButton);
+
+        submitButton.setOnClickListener(x -> OnSubmitButtonClick());
+
+        Button showPasswordButton = (Button) findViewById(R.id.showPasswordButton);
+
+        EditText passwordInput = (EditText) findViewById(R.id.passwordInput);
+
+        showPasswordButton.setOnClickListener(x -> OnShowPasswordClick(showPasswordButton, passwordInput));
+
+        if (savedInstanceState != null)
+        {
+            isPasswordVisible = savedInstanceState.getBoolean("passwordVisible", false);
+
+            if (isPasswordVisible) { SetPasswordVisibility(showPasswordButton, passwordInput, true); }
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState)
+    {
+        super.onSaveInstanceState(outState);
+
+        outState.putBoolean("passwordVisible", isPasswordVisible);
+    }
+
+    private void OnBackButtonClick()
+    {
+        finish();
+    }
+
+    private void OnSubmitButtonClick()
+    {
+        Intent intent = new Intent(this, ActivityEmployeeLogin.class);
+
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+        startActivity(intent);
+    }
+
+    private void OnShowPasswordClick(Button showPasswordButton, EditText passwordInput)
+    {
+        isPasswordVisible = !isPasswordVisible;
+
+        SetPasswordVisibility(showPasswordButton, passwordInput, isPasswordVisible);
+    }
+
+    private void SetPasswordVisibility(Button showPasswordButton, EditText passwordInput, boolean state)
+    {
+        Typeface original = passwordInput.getTypeface();
+        int cursorPos = passwordInput.getSelectionStart();
+
+        if (state)
+        {
+            showPasswordButton.setBackground(getDrawable(R.drawable.hide_password_icon_img));
+
+            passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+        }
+
+        else
+        {
+            showPasswordButton.setBackground(getDrawable(R.drawable.show_password_icon_img));
+
+            passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        }
+
+        passwordInput.setTypeface(original);
+        passwordInput.setSelection(cursorPos);
     }
 }
