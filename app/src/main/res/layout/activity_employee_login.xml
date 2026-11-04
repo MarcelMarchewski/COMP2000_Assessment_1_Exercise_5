@@ -98,4 +98,25 @@
             />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/inputFieldLayout"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:hint="name@place.com"
+
+            android:fontFamily="sans-serif-light"
+
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

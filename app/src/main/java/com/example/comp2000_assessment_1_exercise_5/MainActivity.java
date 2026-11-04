@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void OnEmployeeLoginButtonClick()
     {
-        Log.d("EmployeeLoginButton", "Clicked");
-
         Intent intent = new Intent(this, ActivityEmployeeLogin.class);
 
         startActivity(intent);
