@@ -106,6 +106,8 @@
 
         android:orientation="vertical"
 
+        android:layout_marginTop="48dp"
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -213,6 +215,32 @@
                 android:background="@drawable/show_password_icon_img"
 
                 app:backgroundTint="?android:textColorPrimary"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/forgotPasswordButton"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="sans-serif-light"
+                android:letterSpacing="0.25"
+
+                android:text="Forgot Password?"
+
+                app:backgroundTint="@color/bookingOrange"
                 />
         </LinearLayout>
     </LinearLayout>
