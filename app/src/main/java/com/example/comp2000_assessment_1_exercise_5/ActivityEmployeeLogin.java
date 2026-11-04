@@ -17,6 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ActivityEmployeeLogin extends AppCompatActivity {
 
+    private boolean isPasswordVisible = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +39,21 @@ public class ActivityEmployeeLogin extends AppCompatActivity {
         EditText passwordInput = (EditText) findViewById(R.id.passwordInput);
 
         showPasswordButton.setOnClickListener(x -> OnShowPasswordClick(showPasswordButton, passwordInput));
+
+        if (savedInstanceState != null)
+        {
+            isPasswordVisible = savedInstanceState.getBoolean("passwordVisible", false);
+
+            if (isPasswordVisible) { SetPasswordVisibility(showPasswordButton, passwordInput, true); }
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState)
+    {
+        super.onSaveInstanceState(outState);
+
+        outState.putBoolean("passwordVisible", isPasswordVisible);
     }
 
     private void OnBackButtonClick()
@@ -46,28 +63,28 @@ public class ActivityEmployeeLogin extends AppCompatActivity {
 
     private void OnShowPasswordClick(Button showPasswordButton, EditText passwordInput)
     {
+        isPasswordVisible = !isPasswordVisible;
+
+        SetPasswordVisibility(showPasswordButton, passwordInput, isPasswordVisible);
+    }
+
+    private void SetPasswordVisibility(Button showPasswordButton, EditText passwordInput, boolean state)
+    {
         Typeface original = passwordInput.getTypeface();
         int cursorPos = passwordInput.getSelectionStart();
 
-        switch (passwordInput.getInputType())
+        if (state)
         {
-            case (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD):
-            {
-                showPasswordButton.setBackground(getDrawable(R.drawable.hide_password_icon_img));
+            showPasswordButton.setBackground(getDrawable(R.drawable.hide_password_icon_img));
 
-                passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+            passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+        }
 
-                break;
-            }
+        else
+        {
+            showPasswordButton.setBackground(getDrawable(R.drawable.show_password_icon_img));
 
-            case (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD):
-            {
-                showPasswordButton.setBackground(getDrawable(R.drawable.show_password_icon_img));
-
-                passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-
-                break;
-            }
+            passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         }
 
         passwordInput.setTypeface(original);
