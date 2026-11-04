@@ -99,24 +99,121 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/inputFieldLayout"
+        android:id="@+id/inputLayout"
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-        android:orientation="horizontal"
+        android:orientation="vertical"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         >
 
-        <EditText
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/emailFieldLayout"
+
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:hint="name@place.com"
+            android:gravity="center"
 
-            android:fontFamily="sans-serif-light"
+            android:orientation="horizontal"
+            >
 
-            android:textSize="12sp"
-            android:textColor="@color/white"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="sans-serif-light"
+                android:letterSpacing="0.5"
+
+                android:text="Email:"
+                android:textSize="14sp"
+                android:textColor="?android:textColorPrimary"
+                />
+
+            <EditText
+                android:id="@+id/emailInput"
+
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+
+                android:maxWidth="260dp"
+
+                android:layout_marginStart="12dp"
+
+                android:hint="name@place.com"
+
+                android:inputType="textEmailAddress"
+                android:maxLength="320"
+
+                android:fontFamily="sans-serif-light"
+
+                android:textSize="16sp"
+                android:textColor="?android:textColorPrimary"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/passwordFieldLayout"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="sans-serif-light"
+                android:letterSpacing="0.5"
+
+                android:text="Password:"
+                android:textSize="14sp"
+                android:textColor="?android:textColorPrimary"
+                />
+
+            <EditText
+                android:id="@+id/passwordInput"
+
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+
+                android:maxWidth="200dp"
+
+                android:layout_marginStart="12dp"
+
+                android:hint="Enter password here..."
+                android:autofillHints="password"
+
+                android:inputType="textPassword"
+
+                android:fontFamily="sans-serif-light"
+
+                android:textSize="16sp"
+                android:textColor="?android:textColorPrimary"
+                />
+
+            <Button
+                android:id="@+id/showPasswordButton"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+
+                android:fontFamily="sans-serif-light"
+                android:letterSpacing="0.25"
+
+                android:background="@drawable/show_password_icon_img"
+
+                app:backgroundTint="?android:textColorPrimary"
+                />
+        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
