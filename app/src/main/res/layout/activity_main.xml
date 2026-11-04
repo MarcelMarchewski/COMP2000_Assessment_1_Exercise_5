@@ -11,10 +11,8 @@
     <ImageView
         android:id="@+id/mainBackground"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:scaleType="centerCrop"
+        android:layout_width="420dp"
+        android:layout_height="420dp"
 
         android:contentDescription="Background image"
 
@@ -81,6 +79,8 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/employeeLoginButton"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -98,10 +98,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_bias="0.45"
         />
 
     <Button
+        android:id="@+id/managerLoginButton"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -119,6 +121,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintVertical_bias="0.75"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

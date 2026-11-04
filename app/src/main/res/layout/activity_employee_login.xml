@@ -11,10 +11,8 @@
     <ImageView
         android:id="@+id/mainBackground"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:scaleType="centerCrop"
+        android:layout_width="512dp"
+        android:layout_height="512dp"
 
         android:contentDescription="Background image"
 
@@ -36,6 +34,24 @@
         app:layout_constraintStart_toStartOf="parent"
         />
 
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+
+        android:fontFamily="sans-serif-light"
+        android:letterSpacing="0.25"
+
+        android:layout_marginTop="36dp"
+        android:layout_marginStart="12dp"
+
+        android:background="@drawable/main_back_button_img"
+
+        app:backgroundTint="@color/white"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
     <LinearLayout
         android:id="@+id/mainLayout"
 
@@ -52,7 +68,7 @@
             android:layout_gravity="center|start"
 
             android:layout_marginTop="12dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="81dp"
 
             android:fontFamily="sans-serif-light"
             android:letterSpacing="0.5"
@@ -69,7 +85,7 @@
             android:layout_gravity="center|start"
 
             android:layout_marginTop="32dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="81dp"
 
             android:fontFamily="sans-serif-light"
             android:letterSpacing="0.5"
