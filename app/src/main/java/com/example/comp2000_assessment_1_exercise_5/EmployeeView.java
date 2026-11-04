@@ -37,24 +37,52 @@ public class EmployeeView extends AppCompatActivity {
 
         bookings.add
                 (
-                        new Booking("Seminar Room 2", "06/11/2026", "09:00-12:00")
+                        new Booking
+                                (
+                                "Seminar Room 2",
+                                "06/11/2026",
+                                "09:00-12:00",
+                                "Meeting for latest product",
+                                "Approved"
+                                )
                 );
 
         bookings.add
                 (
-                        new Booking("Meeting Room 1", "06/11/2026", "13:00-14:00")
+                        new Booking
+                                (
+                                "Meeting Room 1",
+                                "06/11/2026",
+                                "13:00-14:00",
+                                "Meeting for new marketing strategy",
+                                "Approved"
+                                )
                 );
 
         bookings.add
                 (
-                        new Booking("Meeting Room 3", "08/11/2026", "09:00-12:00")
+                        new Booking
+                                (
+                                "Meeting Room 3",
+                                "08/11/2026",
+                                "09:00-12:00",
+                                "Meeting for work review",
+                                "Denied"
+                                )
                 );
 
         for (int i = 9; i < 15; i++)
         {
             bookings.add
                     (
-                            new Booking("Seminar Room 2", "0" + String.valueOf(i) + "/11/2026", "09:00-12:00")
+                            new Booking
+                                    (
+                                    "Seminar Room 2",
+                                    "0" + String.valueOf(i) + "/11/2026",
+                                    "09:00-12:00",
+                                    "Meeting for generic purpose",
+                                    "Pending"
+                                    )
                     );
         }
 

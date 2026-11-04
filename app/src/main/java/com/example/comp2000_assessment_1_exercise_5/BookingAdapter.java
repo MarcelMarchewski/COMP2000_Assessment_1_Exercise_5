@@ -1,5 +1,6 @@
 package com.example.comp2000_assessment_1_exercise_5;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +50,15 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
         {
             Booking selectedBooking = bookings.get(currentPos);
 
-            // TODO: swap to manage booking screen with this data
+            Intent intent = new Intent(holder.itemView.getContext(), EmployeeManageBooking.class);
+
+            intent.putExtra("roomName", selectedBooking.getRoomName());
+            intent.putExtra("date", selectedBooking.getDate());
+            intent.putExtra("time", selectedBooking.getTime());
+            intent.putExtra("description", selectedBooking.getDescription());
+            intent.putExtra("status", selectedBooking.getStatus());
+
+            holder.itemView.getContext().startActivity(intent);
         }
     }
 

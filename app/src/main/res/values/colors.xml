@@ -2,7 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
     <color name="bookingBlue">#3A5FB5</color>
     <color name="bookingOrange">#B5753A</color>
     <color name="bookingOrangePale">#C28B59</color>
+    <color name="bookingGrey">#7a7a7a</color>
 </resources>
