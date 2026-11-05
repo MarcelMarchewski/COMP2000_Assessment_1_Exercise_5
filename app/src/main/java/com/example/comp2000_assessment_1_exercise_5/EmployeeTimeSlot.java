@@ -1,10 +1,12 @@
 package com.example.comp2000_assessment_1_exercise_5;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -30,6 +32,12 @@ public class EmployeeTimeSlot extends AppCompatActivity {
 
         NavigationBar.Setup(this);
 
+        Button backButton = (Button) findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(x -> OnBackButtonClick());
+
+        Button continueButton = (Button) findViewById(R.id.continueButton);
+
         TextView[] slots =
         {
                 findViewById(R.id.one),
@@ -47,6 +55,8 @@ public class EmployeeTimeSlot extends AppCompatActivity {
 
         EditText startTime = (EditText) findViewById(R.id.startTimeInput);
         EditText endTime = (EditText) findViewById(R.id.endTimeInput);
+
+        continueButton.setOnClickListener(x -> OnContinueButtonClick(startTime, endTime));
 
         TextWatcher timeWatcher = new TextWatcher()
         {
@@ -71,6 +81,49 @@ public class EmployeeTimeSlot extends AppCompatActivity {
 
         startTime.addTextChangedListener(timeWatcher);
         endTime.addTextChangedListener(timeWatcher);
+    }
+
+    private void OnBackButtonClick()
+    {
+        finish();
+    }
+
+    private void OnContinueButtonClick(EditText startTime, EditText endTime)
+    {
+        String startTimeText = String.valueOf(startTime.getText());
+
+        if (startTimeText.length() < 2)
+        {
+            startTimeText = "0" + startTimeText;
+        }
+
+        startTimeText = startTimeText + ":00";
+
+        String endTimeText = String.valueOf(endTime.getText());
+
+        if (endTimeText.length() < 2)
+        {
+            endTimeText = "0" + endTimeText;
+        }
+
+        endTimeText = endTimeText + ":00";
+
+        Intent intent = new Intent(this, EmployeeDescriptionBooking.class);
+
+        intent.putExtra("selectedRoom", getIntent().getStringExtra("selectedRoom"));
+        intent.putExtra("selectedDate", getIntent().getStringExtra("selectedDate"));
+
+        if (startTime.getText().length() > 0 && startTime.getText().length() > 0)
+        {
+            intent.putExtra("selectedTime", startTimeText + "-" + endTimeText);
+        }
+
+        else
+        {
+            intent.putExtra("selectedTime", "09:00" + "-" + "12:00");
+        }
+
+        startActivity(intent);
     }
 
     private void UpdateTimeSlots(TextView[] slots, int[] slotTimes, EditText startTime, EditText endTime)

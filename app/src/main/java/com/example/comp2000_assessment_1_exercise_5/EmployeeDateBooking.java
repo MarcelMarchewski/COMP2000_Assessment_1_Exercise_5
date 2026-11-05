@@ -26,6 +26,10 @@ public class EmployeeDateBooking extends AppCompatActivity {
 
         NavigationBar.Setup(this);
 
+        Button backButton = (Button) findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(x -> OnBackButtonClick());
+
         DatePicker picker = (DatePicker) findViewById(R.id.bookingDatePicker);
 
         Button continueButton = (Button) findViewById(R.id.continueButton);
@@ -33,12 +37,17 @@ public class EmployeeDateBooking extends AppCompatActivity {
         continueButton.setOnClickListener(x -> OnContinueButtonClick(picker));
     }
 
+    private void OnBackButtonClick()
+    {
+        finish();
+    }
+
     private void OnContinueButtonClick(DatePicker picker)
     {
         Intent intent = new Intent(this, EmployeeTimeSlot.class);
 
         intent.putExtra("selectedRoom", getIntent().getStringExtra("selectedRoom"));
-        intent.putExtra("selectedDate", String.valueOf(picker.getDayOfMonth()) + "/" + String.valueOf(picker.getMonth()) + "/" + String.valueOf(picker.getYear()));
+        intent.putExtra("selectedDate", String.valueOf(picker.getDayOfMonth()) + "/" + String.valueOf(picker.getMonth() + 1) + "/" + String.valueOf(picker.getYear()));
 
         startActivity(intent);
     }
