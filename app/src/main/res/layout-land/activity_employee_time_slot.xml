@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmployeeTimeSlot">
+
+    <ImageView
+        android:id="@+id/topBar"
+
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+
+        android:scaleType="fitXY"
+
+        android:contentDescription="Background scaler"
+
+        app:srcCompat="@drawable/main_background_scaler_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+
+        android:scaleType="fitXY"
+
+        android:contentDescription="Corner slot"
+
+        app:srcCompat="@drawable/secondary_corner_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+
+        android:scaleType="fitXY"
+        android:scaleX="-1"
+
+        android:contentDescription="Corner slot"
+
+        app:srcCompat="@drawable/primary_corner_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Button
+        android:id="@+id/backButton"
+
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+
+        android:fontFamily="sans-serif-light"
+        android:letterSpacing="0.25"
+
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="7dp"
+
+        android:background="@drawable/main_back_button_img"
+
+        app:backgroundTint="@color/white"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+
+        android:fontFamily="sans-serif-light"
+        android:letterSpacing="0.5"
+
+        android:text="Select a Date"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:gravity="center|top"
+
+        android:orientation="vertical"
+
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/navigationBar"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="start|top"
+
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+
+            android:orientation="horizontal"
+            >
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="320dp"
+
+                android:background="@color/bookingOrange"
+                />
+
+            <ScrollView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/nine"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="12dp"
+
+                        android:fontFamily="sans-serif-light"
+                        android:letterSpacing="0.1"
+
+                        android:text="09:00"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+
+                        android:background="@color/green"
+                        />
+
+                    <TextView
+                        android:id="@+id/ten"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="12dp"
+
+                        android:fontFamily="sans-serif-light"
+                        android:letterSpacing="0.1"
+
+                        android:text="10:00"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+
+                        android:background="@color/green"
+                        />
+
+                    <TextView
+                        android:id="@+id/eleven"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="12dp"
+
+                        android:fontFamily="sans-serif-light"
+                        android:letterSpacing="0.1"
+
+                        android:text="11:00"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+
+                        android:background="@color/green"
+                        />
+
+                    <TextView
+                        android:id="@+id/twelve"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="12dp"
+
+                        android:fontFamily="sans-serif-light"
+                        android:letterSpacing="0.1"
+
+                        android:text="12:00"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+
+                        android:background="@color/green"
+                        />
+
+                    <TextView
+                        android:id="@+id/one"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="12dp"
+
+                        android:fontFamily="sans-serif-light"
+                        android:letterSpacing="0.1"
+
+                        android:text="13:00"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+
+                        android:background="@color/green"
+                        />
+
+                    <TextView
+                        android:id="@+id/two"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="12dp"
+
+                        android:fontFamily="sans-serif-light"
+                        android:letterSpacing="0.1"
+
+                        android:text="14:00"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+
+                        android:background="@color/green"
+                        />
+
+                    <TextView
+                        android:id="@+id/three"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="12dp"
+
+                        android:fontFamily="sans-serif-light"
+                        android:letterSpacing="0.1"
+
+                        android:text="15:00"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+
+                        android:background="@color/green"
+                        />
+
+                    <TextView
+                        android:id="@+id/four"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="12dp"
+
+                        android:fontFamily="sans-serif-light"
+                        android:letterSpacing="0.1"
+
+                        android:text="16:00"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+
+                        android:background="@color/green"
+                        />
+
+                    <TextView
+                        android:id="@+id/five"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="12dp"
+
+                        android:fontFamily="sans-serif-light"
+                        android:letterSpacing="0.1"
+
+                        android:text="17:00"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+
+                        android:background="@color/green"
+                        />
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="32dp"
+
+                android:orientation="vertical"
+                >
+
+                <EditText
+                    android:id="@+id/startTimeInput"
+
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+
+                    android:maxWidth="260dp"
+
+                    android:hint="9"
+
+                    android:inputType="time"
+                    android:maxLength="2"
+
+                    android:fontFamily="sans-serif-light"
+
+                    android:textSize="16sp"
+                    android:textColor="?android:textColorPrimary"
+                    />
+
+                <EditText
+                    android:id="@+id/endTimeInput"
+
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+
+                    android:maxWidth="260dp"
+
+                    android:hint="12"
+
+                    android:inputType="time"
+                    android:maxLength="2"
+
+                    android:fontFamily="sans-serif-light"
+
+                    android:textSize="16sp"
+                    android:textColor="?android:textColorPrimary"
+                    />
+
+                <Button
+                    android:id="@+id/continueButton"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="12dp"
+
+                    android:fontFamily="sans-serif-light"
+                    android:letterSpacing="0.25"
+
+                    android:text="Continue"
+                    android:textColor="@color/white"
+
+                    app:backgroundTint="@color/bookingOrange"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/navigationBar"
+        layout="@layout/navigation_bar"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

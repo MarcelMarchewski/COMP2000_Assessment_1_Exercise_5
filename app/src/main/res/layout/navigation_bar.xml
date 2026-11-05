@@ -29,7 +29,7 @@
 
         android:background="@drawable/view_bookings_img"
 
-        app:backgroundTint="@color/bookingBlue"
+        app:backgroundTint="@color/black"
         />
 
     <Button
