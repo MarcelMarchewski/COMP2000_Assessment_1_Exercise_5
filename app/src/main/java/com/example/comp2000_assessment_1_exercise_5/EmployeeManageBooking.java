@@ -1,15 +1,20 @@
 package com.example.comp2000_assessment_1_exercise_5;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.DialogFragment;
 
 public class EmployeeManageBooking extends AppCompatActivity {
 
@@ -28,6 +33,10 @@ public class EmployeeManageBooking extends AppCompatActivity {
 
         backButton.setOnClickListener(x -> OnBackButtonClick());
 
+        Button cancelButton = (Button) findViewById(R.id.cancelButton);
+
+        cancelButton.setOnClickListener(x -> OnCancelButtonClick());
+
         TextView roomName = (TextView) findViewById(R.id.roomName);
         TextView bookingDateTime = (TextView) findViewById(R.id.bookingDateTime);
         TextView description = (TextView) findViewById(R.id.bookingDescription);
@@ -44,5 +53,12 @@ public class EmployeeManageBooking extends AppCompatActivity {
     private void OnBackButtonClick()
     {
         finish();
+    }
+
+    private void OnCancelButtonClick()
+    {
+        CancelButtonDialogFragment dialog = new CancelButtonDialogFragment();
+
+        dialog.show(getSupportFragmentManager(), "CancelBookingDialog");
     }
 }

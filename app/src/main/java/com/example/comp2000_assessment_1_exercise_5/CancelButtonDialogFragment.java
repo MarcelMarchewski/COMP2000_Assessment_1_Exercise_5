@@ -1,0 +1,38 @@
+package com.example.comp2000_assessment_1_exercise_5;
+
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
+
+public class CancelButtonDialogFragment extends DialogFragment
+{
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        builder.setTitle("Warning").setMessage("Are you sure you want to cancel this booking?");
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i)
+            {
+                // Cancel the booking
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i)
+            {
+                // Don't cancel the booking
+            }
+        });
+
+        return builder.create();
+    }
+}
