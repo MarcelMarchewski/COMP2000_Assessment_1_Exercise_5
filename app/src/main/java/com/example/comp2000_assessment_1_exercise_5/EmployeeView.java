@@ -31,59 +31,61 @@ public class EmployeeView extends AppCompatActivity {
             return insets;
         });
 
+        NavigationBar.Setup(this);
+
         bookingView = findViewById(R.id.bookingsRecyclerView);
 
         bookingView.setLayoutManager(new LinearLayoutManager(this));
 
         bookings.add
+        (
+            new Booking
                 (
-                        new Booking
-                                (
-                                "Seminar Room 2",
-                                "06/11/2026",
-                                "09:00-12:00",
-                                "Meeting for latest product",
-                                "Approved"
-                                )
-                );
+                    "Seminar Room 2",
+                    "06/11/2026",
+                    "09:00-12:00",
+                    "Meeting for latest product",
+                    "Approved"
+                )
+        );
 
         bookings.add
+        (
+            new Booking
                 (
-                        new Booking
-                                (
-                                "Meeting Room 1",
-                                "06/11/2026",
-                                "13:00-14:00",
-                                "Meeting for new marketing strategy",
-                                "Approved"
-                                )
-                );
+                    "Meeting Room 1",
+                    "06/11/2026",
+                    "13:00-14:00",
+                    "Meeting for new marketing strategy",
+                    "Approved"
+                )
+        );
 
         bookings.add
+        (
+            new Booking
                 (
-                        new Booking
-                                (
-                                "Meeting Room 3",
-                                "08/11/2026",
-                                "09:00-12:00",
-                                "Meeting for work review",
-                                "Denied"
-                                )
-                );
+                    "Meeting Room 3",
+                    "08/11/2026",
+                    "09:00-12:00",
+                    "Meeting for work review",
+                    "Denied"
+                )
+        );
 
         for (int i = 9; i < 15; i++)
         {
             bookings.add
-                    (
-                            new Booking
-                                    (
-                                    "Seminar Room 2",
-                                    "0" + String.valueOf(i) + "/11/2026",
-                                    "09:00-12:00",
-                                    "Meeting for generic purpose",
-                                    "Pending"
-                                    )
-                    );
+                (
+                    new Booking
+                        (
+                            "Seminar Room 2",
+                            "0" + String.valueOf(i) + "/11/2026",
+                            "09:00-12:00",
+                            "Meeting for generic purpose",
+                            "Pending"
+                        )
+                );
         }
 
         bookingAdapter = new BookingAdapter(bookings);

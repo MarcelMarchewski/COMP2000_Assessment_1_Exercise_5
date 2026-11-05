@@ -29,6 +29,8 @@ public class EmployeeManageBooking extends AppCompatActivity {
             return insets;
         });
 
+        NavigationBar.Setup(this);
+
         Button backButton = (Button) findViewById(R.id.backButton);
 
         backButton.setOnClickListener(x -> OnBackButtonClick());
