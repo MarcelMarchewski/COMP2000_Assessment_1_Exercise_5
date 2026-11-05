@@ -7,4 +7,135 @@
     android:layout_height="match_parent"
     tools:context=".EmployeeSettings">
 
+    <ImageView
+        android:id="@+id/topBar"
+
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+
+        android:scaleType="fitXY"
+
+        android:contentDescription="Background scaler"
+
+        app:srcCompat="@drawable/main_background_scaler_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+
+        android:scaleType="fitXY"
+
+        android:contentDescription="Corner slot"
+
+        app:srcCompat="@drawable/primary_corner_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+
+        android:scaleType="fitXY"
+        android:scaleX="-1"
+
+        android:contentDescription="Corner slot"
+
+        app:srcCompat="@drawable/primary_corner_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+
+        android:fontFamily="sans-serif-light"
+        android:letterSpacing="0.5"
+
+        android:text="Settings"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        android:gravity="center"
+
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/navigationBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <Button
+            android:id="@+id/accountButton"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.25"
+
+            android:text="Account"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+
+            app:backgroundTint="@color/bookingOrange"
+            />
+
+        <Button
+            android:id="@+id/notificationsButton"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="32dp"
+
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.25"
+
+            android:text="Notifications"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+
+            app:backgroundTint="@color/bookingOrange"
+            />
+
+        <Button
+            android:id="@+id/accessibilityButton"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="32dp"
+
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.25"
+
+            android:text="Accessibility"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+
+            app:backgroundTint="@color/bookingOrange"
+            />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/navigationBar"
+        layout="@layout/navigation_bar"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
